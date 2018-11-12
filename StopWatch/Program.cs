@@ -17,7 +17,7 @@ namespace StopWatch
             Console.WriteLine(sw.Elapsed);
             sw.Reset();
             sw.Start();
-            res = gcd.Algorithm2(10, 30);
+            res = gcd.Algorithm2(72, 27);
             sw.Stop();
             Console.WriteLine(res);
             Console.WriteLine(sw.Elapsed);      
