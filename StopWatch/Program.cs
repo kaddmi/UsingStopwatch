@@ -14,7 +14,7 @@ namespace StopWatch
             int res;
             t.Start();
             sw.Start();
-            res = gcd.Algorithm2(10, 30);
+            res = gcd.Algorithm2(72, 27);
             sw.Stop();
             Thread.Sleep(0);
             Console.WriteLine(res);
