@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
 
 namespace StopWatch
 {
@@ -9,18 +10,16 @@ namespace StopWatch
         {
             Stopwatch sw = new Stopwatch();
             GCD gcd = new GCD();
+            Thread t = new Thread(new ThreadStart(gcd.ThreadMethod1));
             int res;
-            sw.Start();
-            res = gcd.Algorithm1(72,27);
-            sw.Stop();
-            Console.WriteLine(res);
-            Console.WriteLine(sw.Elapsed);
-            sw.Reset();
+            t.Start();
             sw.Start();
             res = gcd.Algorithm2(10, 30);
             sw.Stop();
+            Thread.Sleep(0);
             Console.WriteLine(res);
-            Console.WriteLine(sw.Elapsed);      
+            Console.WriteLine(sw.Elapsed);
+            t.Join();
             Console.ReadLine();
         }
     }
